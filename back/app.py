@@ -19,7 +19,11 @@ def chat_with_ai():
     url = "https://ollama.ia4sud.fr/api/chat"
     payload = {
         "model": "jpacifico/chocolatine-3b",
-        "messages": [{"role": "user", "content": user_message}]
+        "messages": [{
+              "role": "user",
+              "content": user_message
+            }],
+        "stream": False
         # "max_tokens": 10000
     }
 
