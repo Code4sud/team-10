@@ -30,7 +30,7 @@ def chat_with_ai():
     try:
         response = requests.post(url, json=payload)
         if response.status_code == 200:
-            ai_reply = response.json().get("choices", [])[0].get("message", {}).get("content", "").strip()
+            ai_reply = response.json().get("message", {}).get("content", "").strip()
 
             # Convert AI reply to Markdown
             ai_reply_markdown = markdown.markdown(ai_reply)
